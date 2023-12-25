@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: f1193459-6ff5-460e-b1bf-ee282d383015
+      url: 'https://hvargasojeda.quarto.pub/introducción-a-las-series-de-tiempo'

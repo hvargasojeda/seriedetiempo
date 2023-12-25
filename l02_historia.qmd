@@ -1,0 +1,33 @@
+---
+output: html_document
+editor_options:
+    chunk_output_type: console
+---
+
+# Un poco de historia
+
+Nuestro objetivo ahora es realizar un resumen de los principales acontecimientos que dieron forma a la metodología actual del análisis de las series de tiempo
+
+**Material de lectura**
+
+-   Capítulo 1 de @Peña:2005
+
+## Siglo XIII-XIX
+
+Las primeras series temporales estudiadas correspondían a datos astronómicos y meteorológicos.
+Laplace analizó el efecto de las fases de la luna, ajusto una función sinusoidal de los datos pero sus resultados no fueron correctos porque no tuvo en cuenta la dependencia temporal de los datos.
+El descubrimiento del concepto de regresión(F. Galton) y del coeficiente de correlación por K.
+Pearson permitieron aplicarlas al análisis de series de tiempo, el británico G.
+U. Yule introdujo el coeficiente de correlación múltiple y de correlación parcial que también fueron aplicadas a las series temporales, en ese mismo periodo el ruso E.
+Slutsky descubrió que al tomar promedios móviles a una serie se generan artificialmente periodicidades, estos avances llevan a la formalización del concepto de series como un proceso estocástico estacionario gracias al matemático ruso Kolmogorov
+
+## Siglo XX
+
+Herman Wold encontró la representación general de un proceso estacionario como una media móvil infinita y M.
+S. Bartlett estudió las propiedades muestrales de las autocorrelaciones de procesos estacionarios.
+Con el advenimiento de las computadoras se impulsó los métodos de predicción, Hold y Winters introducen los métodos de alisado exponencial.
+La unión de los métodos de alisado y los procesos estocásticos por Muth dió lugar al proceso ARIMA.
+R. A. Fisher e Irvin Fisher introdujeron los retardos para el estudio de variables económicas.
+Box y Jenkins, en 1970, marca un hito para el estudio de las series de tiempo unificando las series estacionarias con las no estacionarias, una de las contribuciones fundamentales de Box y Jenkins fue la introducción de los procesos integrados que se convierten en estacionarios tomando diferencias, en este ámbito se destacan los aportes mas actuales de Dickey y Fuller, quienes proponen un contraste de raíces unitarias.
+La teoría de los procesos integrados significaron avances importantes en el campo de la estadística y la econometría.
+En 1982 se introducen los modelos ARCH cuya varianza futura varía en función de los valores pasados de la serie.

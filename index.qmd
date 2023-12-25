@@ -1,0 +1,24 @@
+## Prefacio {.unnumbered}
+
+Esta es una colección de notas y apuntes sobre la asignatura "Series de tiempo" basado mayormente en el libro de Daniel Peña *Análisis de Series Temporales* adaptado y extendido por Hernán Vargas para un curso introductorio de *Análisis Estadístico de las Series de Tiempo* (Universidad Nacional de Asunción, FACEN, Paraguay).
+
+Cada apunte comienza enumerando los objetivos de aprendizaje y los materiales de lectura requeridos, con referencias adicionales en el texto.
+Las notas presentan los métodos y dan algunos ejemplos, pero son menos detalladas que los materiales de lectura.
+
+Se espera que la audiencia esté familiarizada con la programación R y los siguientes conceptos y métodos estadísticos: distribuciones de probabilidad, inferencia de muestreo y prueba de hipótesis, análisis de correlación y análisis de regresión (incluida la regresión lineal simple y múltiple, modelos de efectos mixtos, modelos lineales generalizados, y modelos aditivos generalizados).
+
+## Autor {.unnumbered}
+
+Hernán Vargas, estudiante de Maestría en Estadística por la Facultad de Ciencias Exactas y Naturales de la Universidad de Asunción, Paraguay.
+
+## Mención {.unnumbered}
+
+Vargas, H.(2023) Introducción a las Series de Tiempo: Notas y Apuntes.
+Edición `(12-2023)`.
+[https://github.com/hvargasojeda](#0)
+
+## Licencia
+
+Este trabajo está bajo licencia de <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png){alt="Creative Commons License" style="border-width:0"}</a>

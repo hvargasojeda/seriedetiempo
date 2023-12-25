@@ -1,0 +1,67 @@
+---
+output: html_document
+editor_options:
+    chunk_output_type: console
+---
+
+```{r echo=FALSE}
+library(tidyverse)
+library(forecast)
+library(patchwork)
+options(digits = 3)
+theme_set(theme_light())
+```
+
+# Introducción
+
+Este libro pretende dar al lector una introducción sólida a las Series de Tiempo, formar conceptos y principios teóricos y enseñar a construir modelos para explicar la evolución temporal de una variable y predecir valores futuros.
+Puede utilizarse como texto de apoyo a estudiantes de economía, ingeniería, ambientalistas por citar algunos.
+Además guía la utilización del potente lenguaje de programación R para la manipulación de los datos y la construcción de los modelos.
+
+Una serie temporal es una colección ordenada de variables aleatorias, estas series pueden tener distintos periodos de observación(minutos, días, semanas, meses...) y diferentes propiedades.
+Cuando hablamos de series de tiempo es común mencionar tres elementos: estacionariedad, tendencia y estacionalidad.
+Vamos a explicar estos tres conceptos.
+
+Una serie que no presenta una clara tendencia creciente o decreciente donde sus valores oscilan alrededor de un valor medio entonces decimos que la serie es estable o estacionaria.
+
+```{r echo=FALSE}
+#| label: fig-estacionario
+#| fig-cap: "Serie de tiempo(At) de comportamiento estacionario"
+set.seed(123)
+At<-ts(rnorm(200))
+p<-autoplot(At)
+p + xlab("Tiempo")
+```
+
+La @fig-estacionario es un ejemplo de serie de tiempo estacionaria es claramente estable en el intervalo de tiempo observados, es decir, los datos no tienden a crecer o decrecer con el tiempo.
+
+A diferencia de la anterior cuando hablamos de tendencia la serie no es estable en el tiempo ya que su nivel aumenta o disminuye con el tiempo, ese tipo de series es con la que nos encontramos más frecuentemente en la vida cotidiana especialmente las series relacionadas a variables económicas y sociales.
+Las tendencias nuevamente pueden presentar un comportamiento estable lineal, por ejemplo su crecimiento puede ser constante en un valor fijo o también puede presentar variaciones con el tiempo como lo son las variables que tienen un comportamiento polinomial o comportamiento evolutivo cambiante en el tiempo.
+
+```{r echo=FALSE}
+#| label: fig-tendencia
+#| fig-cap: "Serie de tiempo(Xt) con tendencia"
+set.seed(123)
+Xt=1:200
+Xt<-lag(Xt)+At
+p1<-autoplot(Xt)
+p1 + xlab("Tiempo")
+```
+
+La @fig-tendencia muestra una serie con una tendencia claramente creciente, esta serie no es estacionaria, en este caso la tendencia es aproximadamente lineal esto sugiere que la variable Xt va aumentando en el tiempo de forma constante.
+
+La estacionalidad es un fenómeno frecuente en variables económicas o climáticas donde se observa un comportamiento superpuesto que se repite a lo largo del tiempo, si consideramos las estaciones verano, otoño, invierno, primavera tenemos que la temperatura sigue un comportamiento estacional a lo largo de estas estaciones que se va repitiendo en un comportamiento similar cada año, aquí un año corresponde al ciclo o periodo de la estacionalidad.
+
+```{r echo=FALSE}
+#| label: fig-acc
+#| fig-cap: "Total mensual de muertes en accidentes en USA, 1973--1978."
+
+ggplot2::autoplot(MASS::accdeaths) + 
+    xlab("") + 
+    ylab("Número de muertes por accidentes")
+```
+
+La figura @fig-acc corresponde al número de muertes por accidentes en un periodo mensual durante los años 1973 al 1978 vemos que presenta una pauta regular debido a la estacionalidad en este tipo de series nuevamente los valores oscilan alrededor de un valor central(solo parecido a las series estacionarias en ese aspecto).
+
+Estos modelos se denominan univariantes pero también tenemos los denominados multivariantes que nos permite estudiar la relación dinámica entre dos o más series.
+Las predicciones obtenidas con estos modelos se basan en la hipótesis de que las condiciones futuras serán similares a las pasadas y son especialmente útiles a corto plazo.

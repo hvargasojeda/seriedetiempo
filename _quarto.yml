@@ -1,0 +1,48 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+    title: Introducción a las Series de Tiempo
+    subtitle: Notas y Apuntes
+    author: Vargas, H.
+    # date: today
+    date-format: iso
+    favicon: Tfav.png
+    cover-image: Tcov.png
+    repo-url: https://github.com/hvargasojeda/seriedetiempo/
+    repo-branch: master
+  # downloads: [pdf, epub]
+  # sharing: [twitter]
+    page-navigation: true
+    reader-mode: true
+    sidebar:
+        search: true
+    chapters:
+        - index.qmd
+        - l01_intro.qmd
+        - l02_historia.qmd
+        - l03_Eclasico.qmd
+        - references.qmd
+bibliography: references.bib
+appendix-style: default
+format:
+    html:
+        code-fold: true
+        code-link: true
+        theme: cosmo
+        fig-width: 8
+        fig-height: 5
+knitr:
+    opts_chunk:
+        collapse: false
+        message: false
+        warning: false
+        comment: "#>"
+        R.options:
+            knitr.graphics.auto_pdf: true
+
+        pdf:
+            documentclass: scrreprt
+
+editor: visual

@@ -1,0 +1,26 @@
+# El enfoque clásico de análisis
+
+El objetivo de esta conferencia es aprender una variedad de métodos utilizados para *la visualización* de tendencias (de modo que hacen que una tendencia en datos ruidosos sea más evidente), *el modelado* de tendencias (de modo que pueda ayudarnos a llegar a "una ecuación" para la tendencia, que podría estudiarse más a fondo o usarse para la interpolación, el pronóstico o la eliminación de tendencias) y *la eliminación de tendencias* (solo para eliminar la tendencia de la serie, con o sin modelarla).
+Debes ser capaz de elegir un método basado en los objetivos de tu análisis.
+Comenzaremos con métodos simples y ampliamente utilizados que se pueden combinar aún más en algoritmos más elaborados.
+
+**Material de lectura**
+
+-   Capitulo 2 de @gonzalo:2023
+-   Capitulo 3 de @Lyubchich:2023
+
+## Introducción
+
+La mayoría de las series no estacionarias, es decir, las que tienen tendencias o estacionalidad pueden ser transformadas de tal forma que muchas de ellas se convierten en series de tiempo que si reúnen los requisitos para ser modeladas por procesos estacionarios.
+
+Comenzaremos por los métodos clásicos, a los que nos referiremos brevemente, para luego concentrarnos en el método de tomar diferencias sucesivas(diferenciación) de la serie origina lhasta lograr el comportamiento requerido para que pueda se modelada por los procesos ARMA.
+
+El primer paso en el análisis de datos correspondiente a una serie de tiempo es el graficar estos datos para observar el comportamiento en el tiempo de la serie.
+La representación de los datos permite decidir si es conveniente descomponer a la serie $Z_t : t∈ Z$ en:
+
+$$
+Z_t = M_t + S_t + A_t,
+$$
+
+donde $M_t$ es el componente de tendencia, $A_t$ es un proceso estacionario, y $S_t$ is el componente estacional con periodo $m\geqslant 2$ con factores a escala $\lambda_k > 0$ de tal manera que $S_{t+km} = \lambda_kS_t$ para $1 \leqslant t \leqslant m$ y $k \geqslant 1$.
+Para la identificación, necesitamos que $\sum_{t=1}^m S_t = 0$ y $\mathrm{E}(A_t)=0$.
